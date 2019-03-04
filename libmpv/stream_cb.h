@@ -170,6 +170,8 @@ typedef struct mpv_stream_cb_info {
     mpv_stream_cb_seek_fn seek_fn;
     mpv_stream_cb_size_fn size_fn;
     mpv_stream_cb_close_fn close_fn;
+    int sector_size;
+    int read_chunk;
 } mpv_stream_cb_info;
 
 /**

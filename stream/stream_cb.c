@@ -95,7 +95,8 @@ static int open_cb(stream_t *stream)
     stream->fast_skip = true;
     stream->fill_buffer = fill_buffer;
     stream->control = control;
-    stream->read_chunk = 64 * 1024;
+    stream->sector_size = info.sector_size;
+    stream->read_chunk = info.read_chunk ? info.read_chunk : 64 * 1024;
     stream->close = s_close;
 
     return STREAM_OK;
